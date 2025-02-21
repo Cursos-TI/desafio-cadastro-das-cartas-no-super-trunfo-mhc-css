@@ -51,9 +51,9 @@ void registroCidade(struct Cidade *cidade) {
     cidade->pais[strcspn(cidade->pais, "\n")] = '\0';
 
     printf("Digite o codigo ou nome do estado: (por exemplo, 'PR' ou 'Parana') ");
-    fgets(cidade->estado_codigo_ou_nome, sizeof(cidade->estado_codigo_ou_nome), stdin);
-    cidade->estado_codigo_ou_nome[strcspn(cidade->estado_codigo_ou_nome, "\n")] = '\0';
-
+    fgets(cidade->estado_codigo_ou_nome, sizeof(cidade->estado_codigo_ou_nome), stdin);       // "fgets" é usado ao invés de "scanf" para garantir que palavras compostas não
+    cidade->estado_codigo_ou_nome[strcspn(cidade->estado_codigo_ou_nome, "\n")] = '\0';       // quebrem o código e funcionem corretamente. Exemplos: 'Rio de Janeiro', 'Rio Grande do Sul', etc.
+    
     printf("Digite o codigo da cidade: (por exemplo, '01') ");
     fgets(cidade->cidade_codigo, sizeof(cidade->cidade_codigo), stdin);
     cidade->cidade_codigo[strcspn(cidade->cidade_codigo, "\n")] = '\0';
@@ -87,7 +87,7 @@ void registroCidade(struct Cidade *cidade) {
 
 /*
 O CÓDIGO A SEGUIR É OBSOLETO AQUI POIS UTILIZA O "SCANF" QUE NÃO FUNCIONA CORRETAMENTE
-(ou, pelo menos neste código em específico) PARA NOMES COMPOSTOS (OU QUE POSSUEM ESPAÇAMENTO).
+(ou, pelo menos neste código em específico) PARA PALAVRAS COMPOSTAS (OU QUE POSSUEM ESPAÇAMENTO).
 
 Exemplos: 'Rio de Janeiro', 'Rio Grande do Sul', etc.
 
