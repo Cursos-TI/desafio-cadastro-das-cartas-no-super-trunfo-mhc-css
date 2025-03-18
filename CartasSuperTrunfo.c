@@ -41,19 +41,19 @@ void registroCidade(struct Cidade *cidade) {
 
     printf("Digite a populacao da cidade (por exemplo, '1774000'):");
     fgets(buffer, sizeof(buffer), stdin);
-    cidade->populacao = atol(buffer); // Converter 'string' para 'long integer'.
+    cidade->populacao = atol(buffer);                                        // Converter 'string' para 'long integer'.
 
     printf("Digite a area da cidade em quilometros quadrados (por exemplo, '432'): ");
     fgets(buffer, sizeof(buffer), stdin);
-    cidade->area = atof(buffer); // Converter 'string' para 'double'.
+    cidade->area = atof(buffer);                                             // Converter 'string' para 'double'.
 
     printf("Digite o PIB da cidade em bilhoes de reais (por exemplo, '98'): ");
     fgets(buffer, sizeof(buffer), stdin);
-    cidade->pib = atof(buffer); // Converter 'string' para 'double'.
+    cidade->pib = atof(buffer);                                              // Converter 'string' para 'double'.
 
     printf("Digite a quantidade de pontos turisticos da cidade (por exemplo, '20'): ");
     fgets(buffer, sizeof(buffer), stdin);
-    cidade->pontos_turisticos = atof(buffer); // Converter 'string' para 'double'.
+    cidade->pontos_turisticos = atof(buffer);                                // Converter 'string' para 'double'.
 
     // Calcular densidade populacional
     cidade->densidade = cidade->populacao / cidade->area;       // Densidade = População ÷ Área
@@ -82,7 +82,7 @@ void mostrarCidade(struct Cidade cidade, int cartaCodigo) {
 // Função para determinar o vencedor
 int DeterminarVencedor(struct Cidade cidade1, struct Cidade cidade2, int *placar1, int *placar2) {
     *placar1 = 0;
-    *placar2 = 0;           // Estrutura o placar das cartas, que começa em 0.
+    *placar2 = 0;                               // Estrutura o placar das cartas, que começa em 0.
 
     // Comparar população (maior = vencedor)
     if (cidade1.populacao > cidade2.populacao) {            // Se a População da Carta 1 for maior que a da Carta 2,
